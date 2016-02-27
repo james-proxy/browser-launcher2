@@ -82,7 +82,7 @@ getLauncher.detect = function( callback ) {
 
 /**
  * Update the browsers cache and create new profiles if necessary
- * @param {String}   configDir Path to the configuration file
+ * @param {String}   configFile Path to the configuration file
  * @param {Function} callback  Callback function
  */
 getLauncher.update = function( configFile, callback ) {
