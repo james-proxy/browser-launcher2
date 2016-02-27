@@ -4,6 +4,6 @@
 
 const test = require('ava');
 
-test('bap', t => {
+test( 'bap', t => {
     t.pass();
 });
