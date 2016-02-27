@@ -1,7 +1,7 @@
 ## Upcoming Release
 
 #### Breaking changes
-- None yet
+- Type `phantom` is now `phantomjs`, which is a little more consistent
 
 #### User features
 - None yet
