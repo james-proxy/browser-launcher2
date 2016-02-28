@@ -51,7 +51,6 @@
 		"mark": "'",
 		"escape": true
 	},
-	"validateIndentation": "\t",
 	"disallowMixedSpacesAndTabs": true,
 	"disallowTrailingWhitespace": true,
 	"disallowKeywordsOnNewLine": [ "else", "catch" ],
