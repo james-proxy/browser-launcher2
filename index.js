@@ -1,4 +1,5 @@
 var path = require( 'path' ),
+	pick = require('lodash').pick,
 	configModule = require( './lib/config' ),
 	detect = require( './lib/detect' ),
 	run = require( './lib/run' ),
@@ -73,7 +74,9 @@ function getLauncher( configFile, callback ) {
  */
 getLauncher.detect = function( callback ) {
 	detect( function( browsers ) {
-		callback(browsers);
+		callback( browsers.map( function( browser ) {
+			return pick( browser, [ 'name', 'version', 'type', 'command' ])
+		}));
 	} );
 };
 
