@@ -2,6 +2,7 @@ var path = require( 'path' ),
 	configModule = require( './lib/config' ),
 	detect = require( './lib/detect' ),
 	run = require( './lib/run' ),
+	pick = require('lodash/pick'),
 	createProfiles = require( './lib/create_profiles' );
 
 /**
@@ -74,7 +75,7 @@ function getLauncher( configFile, callback ) {
 getLauncher.detect = function( callback ) {
 	detect( function( browsers ) {
 		callback( browsers.map( function( browser ) {
-			return browser;
+			return pick( browser, [ 'name', 'version', 'type', 'command' ] );
 		} ) );
 	} );
 };
