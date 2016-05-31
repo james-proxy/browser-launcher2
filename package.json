@@ -21,7 +21,7 @@
     "plist": "^1.0.1",
     "rimraf": "~2.5.2",
     "uid": "0.0.2",
-    "win-detect-browsers": "1.0.2"
+    "win-detect-browsers": "2.1.0"
   },
   "repository": {
     "type": "git",
