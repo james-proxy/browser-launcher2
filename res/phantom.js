@@ -1,6 +1,7 @@
 /* global phantom */
 var webpage = require( 'webpage' ),
-	currentUrl = phantom.args[ 0 ],
+	system = require( 'system' ),
+	currentUrl = system.args[ 2 ],
 	page;
 
 function renderPage( url ) {
@@ -21,6 +22,10 @@ function renderPage( url ) {
 	page.onConsoleMessage = function( msg ) {
 		console.log( 'console: ' + msg );
 	};
+	
+	page.onResourceError = function(resourceError) {
+		console.log( resourceError.url + ': ' + resourceError.errorString );
+	};
 
 	page.onError = function( msg, trace ) {
 		console.log( 'error:', msg );
@@ -30,6 +35,7 @@ function renderPage( url ) {
 	};
 
 	page.open( url, function( status ) {
+		console.log( 'status:', status );
 		if ( status !== 'success' ) {
 			phantom.exit( 1 );
 		}
